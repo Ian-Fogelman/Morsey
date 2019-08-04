@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="menu">
+   <html>
+      <head>
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <title>Morsey - Morse Code Translator Encode</title>
+		        <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	  </head>
+      <body>
+         <style>
+            textarea {
+            white-space: normal;
+            text-align: justify;
+            -moz-text-align-last: center; /* Firefox 12+ */
+            text-align-last: center;
+            }
+            .purple-border textarea {
+            border: 1px solid #ba68c8;
+            }
+            .green-border textarea {
+            border: 1px solid #D4EDDA;
+            }
+            .red-border textarea {
+            border: 1px solid #F8D7DA;
+            }
+            .purple-border .form-control:focus {
+            border: 1px solid #ba68c8;
+            box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
+            }
+            .green-border-focus .form-control:focus {
+            border: 1px solid #8bc34a;
+            box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+            }
+         </style>
+	<div w3-include-html="/sidebar"></div>
+		<div class="container-fluid">
+		   <div class="container">
+			  <div style="margin-top:100px"></div>
+			  <div class="container-fluid">
+				 <div class="container">
+					<div style="margin-top:100px"></div>
+					<form method="POST" style = "width:100%">
+					   <div class="row">
+						  <textarea name="mcode" style = "width:100%" class="form-control" aria-label="With textarea" placeholder="Enter a new message to encode."></textarea>
+					   </div>
+					   <div class="row">
+						  <div class="col-5">
+							 <h1></h1>
+							 <textarea readonly style = "width:100%" class="form-control" aria-label="With textarea" placeholder="Original Message :">{{ originaltext }}</textarea>
+						  </div>
+						  <div class="col-2 align-middle">
+							 <center>
+								<i style="font-size:5em;color:#007BFF" class="fa fa-angle-double-right fa-lg"></i>
+							 </center>
+						  </div>
+						  <div class="col-5">
+							 <h1></h1>
+							 <textarea readonly style = "width:100%" class="form-control" aria-label="With textarea" placeholder="Morse Message :"> {{ morsecode }}</textarea>
+						  </div>
+					   </div>
+					   <div class="row">
+						  <button type="submit" style="margin-top:20px;" class="btn btn-outline-primary btn-block">Encode</button>
+					   </div>
+					</form>
+				 </div>
+			  </div>
+		   </div>
+		</div>
+   <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+      includeHTML();
+
+   </script>
+
