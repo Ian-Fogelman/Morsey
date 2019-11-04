@@ -3,7 +3,7 @@
 
 Docker Hub Link : https://hub.docker.com/r/ianfogelman/morsey
 
-Live Demo : <a href="shorturl.at/buAHL" target="_blank"> Live Demo</a>
+<a href="shorturl.at/buAHL" target="_blank"> Live Demo</a>
 
 http://shorturl.at/buAHL
 
