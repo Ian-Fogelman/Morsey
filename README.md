@@ -3,7 +3,7 @@
 
 Docker Hub Link : https://hub.docker.com/r/ianfogelman/morsey
 
-Live Demo : <a href="shorturl.at/buAHL"> Live Demo</a>
+Live Demo : <a href="shorturl.at/buAHL" target="_blank"> Live Demo</a>
 
 Morsey is a containerized morse code encode and decode tool.<br />
 Morse code characters can be converter to their plain text translations.<br />
